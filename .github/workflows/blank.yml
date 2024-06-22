@@ -1,7 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
+name: Auto close idiot issues
 
 on:
   issues:
@@ -10,7 +7,7 @@ jobs:
   titlePrefixCheck:
     runs-on: ubuntu-latest
     steps:
-      - if: startsWith(github.event.issue.title, 'ABC-') != 'true'
+      - if: contains(github.event.issue.body, '[X] I checked every box') != 'true'
         name: Close Issue
         uses: peter-evans/close-issue@v3
         with:
