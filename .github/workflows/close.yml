@@ -7,7 +7,7 @@ jobs:
   titlePrefixCheck:
     runs-on: ubuntu-latest
     steps:
-      - if: contains(github.event.issue.body, '[X] I checked every box') != 'true'
+      - if: contains(github.event.issue.body, '[X] I checked every box') == 'true'
         name: Close Issue
         uses: peter-evans/close-issue@v3
         with:
